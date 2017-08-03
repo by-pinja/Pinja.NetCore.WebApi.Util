@@ -1,11 +1,13 @@
-# Protacon.NetCore.WebApi.Util
+[![Build status](https://ci.appveyor.com/api/projects/status/4k9jfvn49u7geb9u?svg=true)](https://ci.appveyor.com/project/savpek/protacon-netcore-webapi-util)
 
-## Protacon.NetCore.WebApi.Util.ModelValidation namespace
+# Protacon.NetCore.WebApi.Util.ModelValidation namespace
 Validates MVC models with self explanatory error messages what went wrong.
 
 Returns bad request (400) and meaningfull message what should be fixed.
 
-### Setup
+## Setup
+
+Enable globally on startup:
 ```cs
 services.AddMvc(options =>
 {
@@ -13,7 +15,7 @@ services.AddMvc(options =>
 });
 ```
 
-### Example
+## Example
 ```cs
 public class Foo
 {
