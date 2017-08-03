@@ -1,4 +1,5 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/4k9jfvn49u7geb9u?svg=true)](https://ci.appveyor.com/project/savpek/protacon-netcore-webapi-util)
+[![Nuget](https://img.shields.io/nuget/dt/Protacon.NetCore.WebApi.Util.svg)](https://www.nuget.org/packages/Protacon.NetCore.WebApi.Util/)
 
 # Protacon.NetCore.WebApi.Util.ModelValidation namespace
 Validates MVC models with self explanatory error messages what went wrong.
