@@ -2,10 +2,7 @@ if(Test-Path $PSScriptRoot\Protacon.NetCore.WebApi.Util\artifacts) {
     Remove-Item $PSScriptRoot\Protacon.NetCore.WebApi.Util\artifacts -Force -Recurse
 }
 
-dotnet restore
 dotnet build
-
-dotnet test $PSScriptRoot\Protacon.NetCore.WebApi.Util.Tests\Protacon.NetCore.WebApi.Util.Tests.csproj
 
 $version = if($env:APPVEYOR_REPO_TAG) {
     "$env:APPVEYOR_REPO_TAG_NAME"
