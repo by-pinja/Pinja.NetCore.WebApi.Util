@@ -7,7 +7,7 @@ namespace Pinja.NetCore.WebApi.Util.Paged
     public class Paged<T>
     {
         [JsonConstructor]
-        protected Paged() { }
+        public Paged() { }
 
         protected Paged(IEnumerable<T> data, int resultCount, int pageCount, int pageSize)
         {

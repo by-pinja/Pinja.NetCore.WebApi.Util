@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Pinja.NetCore.WebApi.Util.OrderBy;
 
 namespace Pinja.NetCore.WebApi.Util.Query
 {

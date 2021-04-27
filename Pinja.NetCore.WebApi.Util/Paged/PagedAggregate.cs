@@ -7,7 +7,7 @@ namespace Pinja.NetCore.WebApi.Util.Paged
     public class PagedAggregate<T, TAggregate> : Paged<T>
     {
         [JsonConstructor]
-        internal PagedAggregate() { }
+        public PagedAggregate(): base() { }
 
         private PagedAggregate(IEnumerable<T> data, int resultCount, int pageCount, int pageSize, TAggregate aggregate) : base(data, resultCount, pageCount, pageSize)
         {
