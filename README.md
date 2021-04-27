@@ -1,4 +1,3 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/4k9jfvn49u7geb9u?svg=true)](https://ci.appveyor.com/project/savpek/Pinja-netcore-webapi-util)
 [![Nuget](https://img.shields.io/nuget/dt/Pinja.NetCore.WebApi.Util.svg)](https://www.nuget.org/packages/Pinja.NetCore.WebApi.Util/)
 
 # Pinja.NetCore.WebApi.Util.RequestLogging
