@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 
-namespace Protacon.NetCore.WebApi.Util.ModelValidation
+namespace Pinja.NetCore.WebApi.Util.ModelValidation
 {
     public class ValidateModelAttribute : ActionFilterAttribute
     {

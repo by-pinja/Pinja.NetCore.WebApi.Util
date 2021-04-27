@@ -1,5 +1,5 @@
-if(Test-Path $PSScriptRoot\Protacon.NetCore.WebApi.Util\artifacts) {
-    Remove-Item $PSScriptRoot\Protacon.NetCore.WebApi.Util\artifacts -Force -Recurse
+if(Test-Path $PSScriptRoot\Pinja.NetCore.WebApi.Util\artifacts) {
+    Remove-Item $PSScriptRoot\Pinja.NetCore.WebApi.Util\artifacts -Force -Recurse
 }
 
 dotnet build
@@ -10,4 +10,4 @@ $version = if($env:APPVEYOR_REPO_TAG) {
     "0.0.1-beta$env:APPVEYOR_BUILD_NUMBER"
 }
 
-dotnet pack $PSScriptRoot\Protacon.NetCore.WebApi.Util\Protacon.NetCore.WebApi.Util.csproj -c Release -o $PSScriptRoot\Protacon.NetCore.WebApi.Util\artifacts /p:Version=$version
+dotnet pack $PSScriptRoot\Pinja.NetCore.WebApi.Util\Pinja.NetCore.WebApi.Util.csproj -c Release -o $PSScriptRoot\Pinja.NetCore.WebApi.Util\artifacts /p:Version=$version

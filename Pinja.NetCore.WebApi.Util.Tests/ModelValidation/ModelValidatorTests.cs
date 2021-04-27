@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using FluentAssertions;
-using Protacon.NetCore.WebApi.Util.ModelValidation;
+using Pinja.NetCore.WebApi.Util.ModelValidation;
 using Xunit;
 
-namespace Protacon.NetCore.WebApi.Util.Tests.ModelValidation
+namespace Pinja.NetCore.WebApi.Util.Tests.ModelValidation
 {
     public class ModelValidatorTests
     {

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Protacon.NetCore.WebApi.Util\Protacon.NetCore.WebApi.Util.csproj" />
+    <ProjectReference Include="..\Pinja.NetCore.WebApi.Util\Pinja.NetCore.WebApi.Util.csproj" />
   </ItemGroup>
 
 </Project>

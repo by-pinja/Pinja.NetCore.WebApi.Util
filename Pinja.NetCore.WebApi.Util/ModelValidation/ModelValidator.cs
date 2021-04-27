@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Protacon.NetCore.WebApi.Util.ModelValidation
+namespace Pinja.NetCore.WebApi.Util.ModelValidation
 {
     public static class ModelValidator
     {

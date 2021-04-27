@@ -1,4 +1,4 @@
-﻿namespace Protacon.NetCore.WebApi.Util.ModelValidation
+﻿namespace Pinja.NetCore.WebApi.Util.ModelValidation
 {
     public class ApiError
     {
