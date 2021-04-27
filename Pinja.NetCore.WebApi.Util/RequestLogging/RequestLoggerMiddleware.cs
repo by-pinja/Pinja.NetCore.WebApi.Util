@@ -1,13 +1,9 @@
-using System;
 using System.IO;
-using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
-using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Pinja.NetCore.WebApi.Util.RequestLogging
 {
@@ -40,10 +36,10 @@ namespace Pinja.NetCore.WebApi.Util.RequestLogging
                 host = context.Request.Host,
                 path = context.Request.Path,
                 queryString = context.Request.Query,
-                requestBody = hasJsonContent ? JObject.Parse(requestBodyText ?? "{}") : (object)requestBodyText
+                requestBody = hasJsonContent ? JsonDocument.Parse(requestBodyText ?? "{}") : (object)requestBodyText
             };
 
-            _logger.LogDebug(JsonConvert.SerializeObject(messageObjToLog, Formatting.Indented));
+            _logger.LogDebug(JsonSerializer.Serialize(messageObjToLog, new JsonSerializerOptions() { WriteIndented = true }));
 
             requestBodyStream.Seek(0, SeekOrigin.Begin);
             context.Request.Body = requestBodyStream;
