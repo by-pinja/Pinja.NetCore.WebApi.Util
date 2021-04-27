@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Protacon.NetCore.WebApi.Util.RequestLogging
+namespace Pinja.NetCore.WebApi.Util.RequestLogging
 {
     public class RequestLoggerMiddleware
     {
