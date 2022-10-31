@@ -9,7 +9,7 @@ namespace Pinja.NetCore.WebApi.Util.Paged
         [JsonConstructor]
         public Paged() { }
 
-        protected Paged(IEnumerable<T> data, int resultCount, int pageCount, int pageSize)
+        protected Paged(IEnumerable<T> data, int? resultCount, int? pageCount, int pageSize)
         {
             Data = data;
             ResultCount = resultCount;
@@ -33,9 +33,9 @@ namespace Pinja.NetCore.WebApi.Util.Paged
             return new Paged<T>(result.Take(pageSize), dataCount, pages, pageSize);
         }
 
-        public static Paged<T> FromEnumerable(IEnumerable<T> data)
+        public static Paged<T> FromEnumerable(IEnumerable<T> data, int pageSize = 50)
         {
-            return new Paged<T>(data, default, default, data.Count());
+            return new Paged<T>(data, null, null, pageSize);
         }
     }
 }

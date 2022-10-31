@@ -1,4 +1,4 @@
-library 'jenkins-ptcs-library@4.0.3'
+library 'jenkins-ptcs-library@5.0'
 
 // pod provides common utilies and tools to jenkins-ptcs-library function correctly.
 // certain ptcs-library command requires containers (like docker or gcloud.)

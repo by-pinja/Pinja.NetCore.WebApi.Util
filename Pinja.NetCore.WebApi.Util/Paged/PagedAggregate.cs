@@ -9,7 +9,7 @@ namespace Pinja.NetCore.WebApi.Util.Paged
         [JsonConstructor]
         public PagedAggregate(): base() { }
 
-        private PagedAggregate(IEnumerable<T> data, int resultCount, int pageCount, int pageSize, TAggregate aggregate) : base(data, resultCount, pageCount, pageSize)
+        private PagedAggregate(IEnumerable<T> data, int? resultCount, int? pageCount, int pageSize, TAggregate aggregate) : base(data, resultCount, pageCount, pageSize)
         {
             Aggregates = aggregate;
         }
@@ -25,6 +25,11 @@ namespace Pinja.NetCore.WebApi.Util.Paged
             var pages = (dataCount + pageSize - 1) / pageSize;
 
             return new PagedAggregate<T, TAggregate>(result.Take(pageSize), dataCount, pages, pageSize, aggregates);
+        }
+
+        public static PagedAggregate<T, TAggregate> FromEnumerable(IEnumerable<T> data, TAggregate aggregates, int pageSize = 50)
+        {
+            return new PagedAggregate<T, TAggregate>(data, null, null, pageSize, aggregates);
         }
     }
 }
