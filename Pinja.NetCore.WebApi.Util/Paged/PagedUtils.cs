@@ -6,7 +6,7 @@ namespace Pinja.NetCore.WebApi.Util.Paged
     {
         public static IQueryable<T> Paginate<T>(this IQueryable<T> data, int page, int pageSize = 50)
         {
-            return data.Skip(page * pageSize).Take(pageSize + 1);
+            return data.Skip(page * pageSize).Take(pageSize);
         }
     }
 }
