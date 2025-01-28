@@ -26,7 +26,7 @@ namespace Pinja.NetCore.WebApi.Util.Paged
         {
             var result = data.Skip(page * pageSize).Take(pageSize + 1).ToList();
 
-            var dataCount = countTotalPages ? data.Count() : default;
+            int? dataCount = countTotalPages ? data.Count() : null;
 
             var pages = (dataCount + pageSize - 1) / pageSize;
 
