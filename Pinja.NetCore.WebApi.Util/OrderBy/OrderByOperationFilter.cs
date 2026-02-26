@@ -1,5 +1,5 @@
 using System.Linq;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Pinja.NetCore.WebApi.Util.OrderBy
@@ -10,18 +10,18 @@ namespace Pinja.NetCore.WebApi.Util.OrderBy
         {
             var matchingParameter = context.ApiDescription.ParameterDescriptions.FirstOrDefault(x => x?.Type?.Name == typeof(OrderByQueryString<>).Name);
 
-            var matchingOperation = operation.Parameters.FirstOrDefault(x => x.Name == matchingParameter?.Name);
+            var matchingOperation = operation.Parameters?.FirstOrDefault(x => x.Name == matchingParameter?.Name);
 
             if (matchingOperation != default)
             {
                 var schema = new OpenApiSchema()
                 {
-                    Type = "string",
+                    Type = JsonSchemaType.String,
                 };
 
                 matchingOperation.Description = "fieldName / fieldName,desc / fieldName,asc";
-                matchingOperation.Schema = schema;
-                matchingOperation.Style = ParameterStyle.Simple;
+                // matchingOperation.Schema = schema;
+                // matchingOperation.Style = ParameterStyle.Simple;
             }
         }
     }
