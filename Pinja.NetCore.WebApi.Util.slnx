@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Pinja.NetCore.WebApi.Util.Tests/Pinja.NetCore.WebApi.Util.Tests.csproj" />
+  <Project Path="Pinja.NetCore.WebApi.Util/Pinja.NetCore.WebApi.Util.csproj" />
+</Solution>
