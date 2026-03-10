@@ -20,8 +20,6 @@ namespace Pinja.NetCore.WebApi.Util.OrderBy
                 };
 
                 matchingOperation.Description = "fieldName / fieldName,desc / fieldName,asc";
-                // matchingOperation.Schema = schema;
-                // matchingOperation.Style = ParameterStyle.Simple;
             }
         }
     }
