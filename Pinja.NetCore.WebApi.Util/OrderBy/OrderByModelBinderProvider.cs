@@ -8,10 +8,7 @@ namespace Pinja.NetCore.WebApi.Util.OrderBy
     {
         public IModelBinder? GetBinder(ModelBinderProviderContext context)
         {
-            if (context == null)
-            {
-                throw new ArgumentNullException(nameof(context));
-            }
+            ArgumentNullException.ThrowIfNull(context);
 
             if (context.Metadata.ModelType.GetTypeInfo().IsGenericType &&
                 context.Metadata.ModelType.GetGenericTypeDefinition() == typeof(OrderByQueryString<>))

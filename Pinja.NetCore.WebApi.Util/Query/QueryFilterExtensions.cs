@@ -27,6 +27,30 @@ namespace Pinja.NetCore.WebApi.Util.Query
             return source;
         }
 
+        public static IQueryable<TSource> FilterWhen<TSource, TFilter>(
+            this IQueryable<TSource> source,
+            TFilter? filterValue,
+            Expression<Func<TSource, bool>> filter)
+            where TFilter : struct
+        {
+            if (filterValue.HasValue)
+            {
+                source = source.Where(filter);
+            }
+
+            return source;
+        }
+
+        public static IQueryable<T> FilterWhen<T>(this IQueryable<T> source, bool? condition, Expression<Func<T, bool>> filter)
+        {
+            if (condition.HasValue)
+            {
+                source = source.Where(filter);
+            }
+
+            return source;
+        }
+
         public static IQueryable<T> FilterWhen<T>(this IQueryable<T> source, string[] filterStrings, Expression<Func<T, bool>> filter)
         {
             if (filterStrings != default && filterStrings.Length > 0)

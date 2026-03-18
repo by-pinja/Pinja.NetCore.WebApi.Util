@@ -4,13 +4,14 @@ using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Linq.Dynamic.Core;
+using System.Threading;
 
 namespace Pinja.NetCore.WebApi.Util.OrderBy
 {
     public class OrderByQueryString<T> : IValidatableObject
     {
         private static ImmutableDictionary<Type, IEnumerable<string>> s_reflectionCache = ImmutableDictionary<Type, IEnumerable<string>>.Empty;
-        private static readonly object s_cacheLocker = new();
+        private static readonly Lock s_cacheLocker = new();
 
         private readonly string? _queryString;
 
