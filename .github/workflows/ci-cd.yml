@@ -26,12 +26,16 @@ jobs:
       - name: Test
         run: dotnet test Pinja.NetCore.WebApi.Util.Tests --configuration Release
 
-      - name: Pack
+      - name: Pack (preview)
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: dotnet pack Pinja.NetCore.WebApi.Util --configuration Release --no-build -p:PackageVersion=0.0.0-preview.${{ github.run_number }} --output nupkgs
+
+      - name: Pack (release)
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           VERSION=${GITHUB_REF_NAME#v}
           dotnet pack Pinja.NetCore.WebApi.Util --configuration Release --no-build -p:PackageVersion=$VERSION --output nupkgs
 
       - name: Push to NuGet
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         run: dotnet nuget push nupkgs/*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
