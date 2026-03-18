@@ -2,6 +2,12 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <PackageId>Pinja.NetCore.WebApi.Util</PackageId>
+    <Authors>Pinja</Authors>
+    <Description>Shared web API utilities for Pinja .NET projects</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/by-pinja/Pinja.NetCore.WebApi.Util</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.3" />
